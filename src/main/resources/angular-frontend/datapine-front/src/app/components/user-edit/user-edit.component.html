@@ -1,0 +1,58 @@
+<div class="panel panel-default" >
+    <div class="panel-heading">Create User</div>
+    <div class="panel-body">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="text" email #email="ngModel" id="email"  [(ngModel)]="user.email" name="user.email" class="form-control" aria-describedby="basic-addon2" />
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-danger" *ngIf="!email.valid && email.touched" >Invalid email</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" #password="ngModel" id="password" [(ngModel)]="user.password" name="user.password"  class="form-control" aria-describedby="basic-addon2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <label for="password">Confirm Password</label>
+                        <input type="password"  #confirmPassword="ngModel"  [(ngModel)]="user.confirmPassword" name="user.confirmPassword" id="confirmPassword" class="form-control" aria-describedby="basic-addon2">
+                    </div>
+                </div>
+            </div>
+
+             <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-danger" *ngIf="password.touched && confirmPassword.touched && password.value != confirmPassword.value " >Password does not match</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-danger" *ngIf="saveErrorMessage != ''">{{saveErrorMessage}}</span>
+                </div>
+            </div>
+            
+            <div class="row">
+
+                <div class="col-md-1">
+                    <button type="submit" [disabled]="!email.valid ||  password.value != confirmPassword.value || password.value == '' " class="btn btn-default">Save User</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

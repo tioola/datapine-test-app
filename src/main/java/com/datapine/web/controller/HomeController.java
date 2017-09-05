@@ -1,10 +1,16 @@
 package com.datapine.web.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+@RestController
 public class HomeController {
 
 	/*
@@ -12,9 +18,12 @@ public class HomeController {
 	 * completely and correctly (just as a hint).
 	 */
 
-	@RequestMapping("/")
-	public ModelAndView showWelcome() {
-		return new ModelAndView("index");
+
+	public ResponseEntity<Map<String, String>>  showWelcome() {
+		Map<String,String> info = new HashMap<>();
+		info.put("authenticated","true");		
+		return ResponseEntity.ok(info);
+		
 	}
 
 }

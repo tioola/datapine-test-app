@@ -2,20 +2,23 @@ package com.datapine.dao;
 
 import java.util.Iterator;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import com.datapine.domain.User;
 
-public interface UserDAO {
+/**
+ * 
+ * @author Diogo
+ *
+ *	There is no need to create an implementation, Spring will do it on the fly based on the method names.
+ *
+ */
+public interface UserDAO extends JpaRepository<User, Long>{
 
-	void save(User user);
+//	User findById(Long id);
 
-	User update(User user);
+	User findOneByEmail(String email);
 
-	void delete(User user);
-
-	User findById(Long id);
-
-	User findByEmail(String email);
-
-	Iterator<User> findAllOrderById();
+//	Iterator<User> findAllOrderById();
 
 }
