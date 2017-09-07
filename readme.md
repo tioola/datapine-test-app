@@ -1,65 +1,36 @@
-   <h2>Read ME</h2>
-       <p> Default user to Login : user=user@gmail.com / pass=123 </p>
-       <p> <span style="color: red; font-weight:bold;">User admin to test ACL: user=admin@gmail.com / pass=123</span> </p>
+Challenge completed (Please READ BELOW)
+------
 
-       <p> <span style="color: red; font-weight:bold;">To Test ACL log in as admin and check if the item appear for you (Log as a normal user to confirm if the item does not appear for ROLE_USER)</span> </p>
-        <p> <span style="color: green; font-weight:bold;">After Login you can check the api's json return directly in </span> </p>
-       
-        <ul>
-            <li><a href="/api/users">http://localhost:8080/api/users</a></li>
-            <li><a href="/api/items">http://localhost:8080/api/items</a></li>
-        </ul>
-        <p> <span style="color: blue; font-weight:bold;">The front-end was made in angular 4, and is inside src/main/resources/angular-frontend/datapine-front</span> </p>
-        <p> <span style="color: blue; font-weight:bold;">to build the front again please install angular 4 and run npm run build and replace static folder with what was generated in dist</span> </p>
-        
-        <h3>Please read my considerations about the project below: </h3>
-        <ul>
-            <li>
-                ++ Converted project to Spring boot.
-               
-            </li>
-            <li>
-                [x] Implement the UserDAO using JPA.
-                <span style="color: red"> I Used JPARepository to generate the implementation  once the queries were simple, but there are also JPQL examples commented </span>
-            </li>
-            <li>
-                [x]  Implement the UserService using the UserDAO and transactions.
-                <span style="color: red"> Service layer is responsible for calling the repository layer to pull the data </span>
-            </li>
+++App was converted to SPRING BOOT
+++The front-end was made in angular 4, and is inside of src/main/resources/angular-frontend/datapine-front
 
-            <li>
-                [x]Implement a RESTful UserController to manage users.
-                <span style="color: red">Used JSON and SPA to develop the challenge so all the data returned from the controller are JSON objects, the reason for that is that once this app would be suppose to deal with a lot of requests, we will be working only with lightweight responses (JSON) and we could also separate our Resources from the Frontend (this way we could have a webserver serving static content and separating the layers would be easier to tune the app )   </span>
-            </li>
-             <li>
-                [X] Implement a simple user login dialog to log in a user. Use HttpSession to store the user credentials to save time, Spring Security can also be used.
-
-                <span style="color: red">Used spring security to authenticate and authorize the resources, you can find the information in WebSecurityConfig.java ( a simple login page in the SPA app was also created)</span>
-            </li>
-
-            <li>
-                [X] Use Spring AOP to log all login attempts via console output or log4j.
-                <span style="color: red">SecurityAOP.java is working on it and also logging through LOG4J 2</span>
-            </li>
-
-             <li>
-                [X] In addition to securing the URLs, secure access to ItemDAO (has to be created alongside with Item domain) via spring security.
-                <span style="color: red">Spring ACL is configured and you can find all the structure in data.sql</span>
-            </li>
+If you want to build the front again please install angular 4 and run npm run build and replace static folder with what was generated in angular dist folder.
 
 
-            <li>
-                [X]  Restrict ItemDAO access if the user is not authenticated by session. Filter any findBy~ and find a method within ItemDAO. ACL has to be used in order to secure domain.
-                <span style="color: red">I created only one item to be used as example.</span>
-            </li>
-
-            <li>
-                [X]  You can either create an API or prepare jUnit tests for adding&viewing Item object (only authenticated users can insert and view objects).
-                <span style="color: red">Authentication testes were created in test folder.</span>
-            </li>
+Check items completed
+---
 
 
+[x] Implement the UserDAO using JPA.
+*I Used JPARepository to generate the implementation  once the queries were simple, but there are also JPQL examples commented 
 
-        </ul>
+[x]  Implement the UserService using the UserDAO and transactions.
+*Service layer is responsible for calling the repository layer to pull the data 
 
-    </div>
+[x] Implement a RESTful UserController to manage users.
+Used JSON and SPA to develop the challenge so all the data returned from the controller are JSON objects, the reason for that is that once this app would be able to deal with a lot of requests, we will be working only with lightweight responses (JSON) and we could also separate our Resources from the Frontend (this way we could have a webserver serving static content and separating the layers would be easier to tune the app )
+
+[X] Implement a simple user login dialog to log in a user. Use HttpSession to store the user credentials to save time, Spring Security can also be used.
+Used spring security to authenticate and authorize the resources, you can find the information in WebSecurityConfig.java ( a simple login page in the SPA app was also created)
+
+[X] Use Spring AOP to log all login attempts via console output or log4j.
+SecurityAOP.java is working on it and also logging through LOG4J 2
+
+[X] In addition to securing the URLs, secure access to ItemDAO (has to be created alongside with Item domain) via spring security.
+Spring ACL is configured and you can find all the structure in data.sql
+
+[X]  Restrict ItemDAO access if the user is not authenticated by session. Filter any findBy~ and find a method within ItemDAO. ACL has to be used in order to secure domain.
+
+[X]  You can either create an API or prepare jUnit tests for adding&viewing Item object (only authenticated users can insert and view objects).
+
+Authentication testes were created in test folder
