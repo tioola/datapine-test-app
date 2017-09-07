@@ -29,8 +29,7 @@ public class GlobSecConfing extends GlobalMethodSecurityConfiguration{
 	DefaultMethodSecurityExpressionHandler expHandler;
 	
 	@Override
-	public MethodSecurityExpressionHandler createExpressionHandler() {
-		System.out.println("---------------------!!!!!--------------------------!!!!-------------------------------");
+	public MethodSecurityExpressionHandler createExpressionHandler() {		
 	    DefaultMethodSecurityExpressionHandler expressionHandler = expHandler;
 	    expressionHandler.setPermissionEvaluator(new AclPermissionEvaluator(jdbcMutable));
 	    expressionHandler.setPermissionCacheOptimizer(new AclPermissionCacheOptimizer(jdbcMutable));

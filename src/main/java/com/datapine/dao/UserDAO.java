@@ -19,15 +19,19 @@ public interface UserDAO extends JpaRepository<User, Long>{
 
 //	User findById(Long id);
 	
+
 	
+	//Example of query how it would be in JPQL
+	//@Query("SELECT u FROM User u ORDER BY u.id DESC")
 	List<User> findAllByOrderByIdDesc();
 	
-	User findOneByEmail(String email);
-
+	
 	//Example of query how it would be  in JPQL
 	//@Query("SELECT u FROM User u WHERE u.email = ?1 ")
 	//User findOneByEmail(String email);
+	User findOneByEmail(String email);
 
-//	Iterator<User> findAllOrderById();
+	
+
 
 }

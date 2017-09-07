@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * If user is authenticated return JSON
+ * @author root
+ *
+ */
 @Component
 public class AuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 

@@ -1,5 +1,6 @@
 INSERT INTO USER (EMAIL, PASSWORD ,ROLE) VALUES('admin@gmail.com', '$2a$10$WgrYfHLrSXaJemfy5yEmQe790Rfdo1dZlru/N3e/Nqy22CKpu/c2.','ROLE_ADMIN');
 INSERT INTO USER (EMAIL, PASSWORD ,ROLE) VALUES('diogof.fabrile@gmail.com', '$2a$10$WgrYfHLrSXaJemfy5yEmQe790Rfdo1dZlru/N3e/Nqy22CKpu/c2.','ROLE_USER');
+INSERT INTO USER (EMAIL, PASSWORD ,ROLE) VALUES('user@gmail.com', '$2a$10$WgrYfHLrSXaJemfy5yEmQe790Rfdo1dZlru/N3e/Nqy22CKpu/c2.','ROLE_USER');
 INSERT INTO USER (EMAIL, PASSWORD ,ROLE) VALUES('user2@gmail.com', '$2a$10$WgrYfHLrSXaJemfy5yEmQe790Rfdo1dZlru/N3e/Nqy22CKpu/c2.','ROLE_USER');
 INSERT INTO USER (EMAIL, PASSWORD ,ROLE) VALUES('user3@gmail.com', '$2a$10$WgrYfHLrSXaJemfy5yEmQe790Rfdo1dZlru/N3e/Nqy22CKpu/c2.','ROLE_USER');
 INSERT INTO USER (EMAIL, PASSWORD ,ROLE) VALUES('user4@gmail.com', '$2a$10$WgrYfHLrSXaJemfy5yEmQe790Rfdo1dZlru/N3e/Nqy22CKpu/c2.','ROLE_USER');

@@ -23,7 +23,11 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-//This is another way to configure ACL :)
+/**
+ * This is another way to create your ACL configuration
+ * @author root
+ *
+ */
 public class ACLConfig  {
 	
 	@Autowired
