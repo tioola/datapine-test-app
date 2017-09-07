@@ -25,10 +25,9 @@ public class CustomAuthenticationUser implements UserDetails {
 		this.password = user.getPassword();
 		
 		List<SimpleGrantedAuthority> def = new ArrayList<>();
-		def.add(new SimpleGrantedAuthority("ROLE_USER"));
-		
-		this.roles = def;
-		
+		def.add(new SimpleGrantedAuthority(user.getRole()));
+
+		this.roles = def;		
 	}
 	
 	@Override

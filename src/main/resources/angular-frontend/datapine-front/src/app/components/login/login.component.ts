@@ -20,6 +20,8 @@ export class LoginComponent{
         
         console.log(this.email);
         let login = this.loginService.login(this.email,this.password).subscribe(response => {
+                
+                console.log(response);
                 this.loginService.isLogged = response.ok;
                 this.router.navigate(['/users']);
             },

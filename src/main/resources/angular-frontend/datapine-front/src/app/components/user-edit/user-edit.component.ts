@@ -23,6 +23,10 @@ export class UserEditComponent {
 
     constructor(private userService: UserService) { }
 
+    close(){
+        this.event.emit('close');  
+    }
+
     onSubmit(form) {
         
 

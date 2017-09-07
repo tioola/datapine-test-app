@@ -30,7 +30,7 @@
                 <div class="col-md-12">
                     <div class="input-group">
                         <label for="password">Confirm Password</label>
-                        <input type="password"  #confirmPassword="ngModel"  [(ngModel)]="user.confirmPassword" name="user.confirmPassword" id="confirmPassword" class="form-control" aria-describedby="basic-addon2">
+                        <input type="password"  #confirmPassword="ngModel"  [(ngModel)]="user.newPassword" name="user.newPassword" id="confirmPassword" class="form-control" aria-describedby="basic-addon2">
                     </div>
                 </div>
             </div>
@@ -49,9 +49,12 @@
             
             <div class="row">
 
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <button type="submit" [disabled]="!email.valid ||  password.value != confirmPassword.value || password.value == '' " class="btn btn-default">Save User</button>
                 </div>
+                <div class="col-md-1">
+                    <button type="button" (click)="close()" class="btn btn-danger">Close</button>
+                </div>                
             </div>
         </form>
     </div>

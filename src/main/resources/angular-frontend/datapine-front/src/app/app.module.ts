@@ -1,3 +1,5 @@
+import { ItemService } from './services/item.service';
+import { ItemListComponent } from './components/item-list/item-list.component';
 import { AuthGuard } from './auth/auth.component';
 import { LoginService } from './services/login.service';
 import { LoginComponent } from './components/login/login.component';
@@ -18,6 +20,7 @@ import { AppComponent } from './app.component';
 const appRoutes: Routes = [
   {path:'users', component: UserListComponent, canActivate: [AuthGuard] },
   {path:'login', component: LoginComponent},
+  {path:'items', component: ItemListComponent},
   {path:'', component: WelcomeComponent,canActivate: [AuthGuard] }
 ]
 @NgModule({
@@ -26,7 +29,8 @@ const appRoutes: Routes = [
     UserListComponent,
     UserEditComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ const appRoutes: Routes = [
     UserService,
     ApiService,
     LoginService,
+    ItemService,
     AuthGuard
     
   ],

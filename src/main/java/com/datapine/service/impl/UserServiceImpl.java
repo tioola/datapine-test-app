@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.datapine.dao.UserDAO;
 import com.datapine.domain.User;
 import com.datapine.service.UserService;
+import com.datapine.utils.PasswordUtils;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -17,7 +18,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User register(String email, String password) {
 		User user = new User(email);
-		user.setPassword(password);
+		user.setPassword(PasswordUtils.encrypt(password));
 		User savedUser = userDAO.save(user);
 		return savedUser;
 	}
@@ -26,20 +27,15 @@ public class UserServiceImpl implements UserService{
 	public User updatePassword(Long userId, String oldPassword, String newPassword) {
 		
 		User user = userDAO.findOne(userId);		
-		
 		if(user == null){
 			throw new IllegalArgumentException("User does not exist and therefore cannot be updated");
 		}
 		
-		user.setPassword(newPassword);
+		user.setPassword(PasswordUtils.encrypt(newPassword));
 		userDAO.save(user);
 		return user;
 	}
 
-	@Autowired
-	public void setUserDAO(UserDAO userDAO){
-		this.userDAO = userDAO;
-	}
 
 	@Override
 	public User findUserByEmail(String email) {
@@ -48,7 +44,8 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<User> findUsers() {
-		List<User> users = this.userDAO.findAll();
+		List<User> users = this.userDAO.findAllByOrderByIdDesc();
+		users.stream().forEach(u -> u.setPassword(null));
 		return users;
 	}
 
@@ -63,6 +60,10 @@ public class UserServiceImpl implements UserService{
 		return this.userDAO.findOne(id);
 	}
 
+	@Autowired
+	public void setUserDAO(UserDAO userDAO){
+		this.userDAO = userDAO;
+	}
 
 	
 	
