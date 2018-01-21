@@ -11,6 +11,7 @@ If you want to build the front again please install angular 4 and run npm run bu
 
 Check items completed
 ---
+another dumb
 
 
 [x] Implement the UserDAO using JPA.
