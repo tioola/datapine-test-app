@@ -3,7 +3,7 @@ Challenge completed (Please READ BELOW)
 --test master
 ++App was converted to SPRING BOOT
 
-
+gg
 ++The front-end was made in angular 4, and is inside of src/main/resources/angular-frontend/datapine-front !!(START PROJECT IN CONTEXT "/" )!!
 
 If you want to build the front again please install angular 4 and run npm run build and replace static folder with what was generated in angular dist folder.
@@ -11,6 +11,7 @@ If you want to build the front again please install angular 4 and run npm run bu
 
 Check items completed
 ---
+another dumb
 
 
 [x] Implement the UserDAO using JPA.
